@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Visual Studio\\ServiceOOP\\ServiceOOP\\ServiceOOP.csproj": {}
+    "D:\\Visual Studio\\Service\\ServiceOOP.csproj": {}
   },
   "projects": {
-    "D:\\Visual Studio\\ServiceOOP\\ServiceOOP\\ServiceOOP.csproj": {
+    "D:\\Visual Studio\\Service\\ServiceOOP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio\\ServiceOOP\\ServiceOOP\\ServiceOOP.csproj",
+        "projectUniqueName": "D:\\Visual Studio\\Service\\ServiceOOP.csproj",
         "projectName": "ServiceOOP",
-        "projectPath": "D:\\Visual Studio\\ServiceOOP\\ServiceOOP\\ServiceOOP.csproj",
+        "projectPath": "D:\\Visual Studio\\Service\\ServiceOOP.csproj",
         "packagesPath": "C:\\Users\\Админ\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio\\ServiceOOP\\ServiceOOP\\obj\\",
+        "outputPath": "D:\\Visual Studio\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

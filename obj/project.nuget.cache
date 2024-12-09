@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J+uKiMXShLJlk0zUtRagELLxAn8Q3LGeYD9hJO5xH0VuuXWvtYLyc1u9m6GRr5rvG7OwJ8aGuRGK58wCC8/MIA==",
+  "dgSpecHash": "M2d+fjBUdab6WgNvoAGCi/irzwD3GtrAlCkVpXxrKhnMfjYTLXPgpwS0cZb0rx9N604LQqZd3DNfjGFVcmmGpA==",
   "success": true,
-  "projectFilePath": "D:\\Visual Studio\\ServiceOOP\\ServiceOOP\\ServiceOOP.csproj",
+  "projectFilePath": "D:\\Visual Studio\\Service\\ServiceOOP.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
