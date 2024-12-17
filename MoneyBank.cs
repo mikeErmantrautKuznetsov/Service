@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ServiceOOP
+﻿namespace ServiceOOP
 {
     public class MoneyService
     {
-        private int _balanceService;
-        private int _fineService;
-        private int _serviceRepair;
+        private int _balanceService = 100000;
+        private int _fineService = 1000;
+        private int _serviceRepair = 2000;
 
-        public int BalanceService { get; private set; } = 100000;
-        public int FineService { get; private set; } = 1000;
-        public int ServiceRepair { get; private set; } = 2000;
-
+        public int BalanceService { get { return _balanceService; } set { _balanceService = value; } }
+        public int FineService { get { return _fineService; } set { _fineService = value; } }
+        public int ServiceRepair { get { return _serviceRepair; } set { _serviceRepair = value; } }
     }
 }

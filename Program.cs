@@ -18,30 +18,50 @@
 
             Console.WriteLine("Склад.");
             Console.WriteLine();
-            warehouse.Check();
+            Console.WriteLine(moneyService.BalanceService);
+            Console.WriteLine();
+            warehouse.DisplayDetails();
             Console.WriteLine();
 
-            Console.WriteLine("Выберите команду: 1 - Ремонт машины. 2 отказ в ремонте.");
-            string agreeRepeat = Console.ReadLine();
-            if (int.TryParse(agreeRepeat, out int resultChoice))
+            bool _exitGame = false;
 
-                switch (resultChoice)
-                {
-                    case 1:
-                        Console.WriteLine();
-                        Console.WriteLine("Напишите сломанную деталь:");
-                        warehouse.RenovateCar();
-                        serviceAuto.RepairCar();
-                        break;
-                    case 2:
-                        serviceAuto.ClientFine();
-                        Console.WriteLine($"Баланс: {moneyService.BalanceService - moneyService.FineService}");
-                        break;
-                    default:
-                        Console.WriteLine("К сожалению у нас нет деталей для ремонта. Бей отказ из-за нарушений правил эксплуатациию.");
-                        break;
-                }
+            while (_exitGame != true)
+            {
+                Console.WriteLine("Выберите команду: 1 - Ремонт машины. 2 - Выход из программы.");
+                string agreeRepeat = Console.ReadLine();
+                if (int.TryParse(agreeRepeat, out int resultChoice))
+
+                    switch (resultChoice)
+                    {
+                        case (int)ComandConsole.RepairCar:
+                            Console.WriteLine();
+                            Console.WriteLine("Напишите сломанную деталь:");
+                            Console.WriteLine();
+                            string needDetails = Console.ReadLine();
+                            Console.WriteLine();
+                            serviceAuto.RepairCar(needDetails);
+                            break;
+
+                        case (int)ComandConsole.ExitProgram:
+                            serviceAuto.Exit();
+                            Console.Clear();
+                            _exitGame = true;
+                            break;
+
+                        default:
+                            Console.WriteLine("К сожалению у нас нет деталей для ремонта. " +
+                                "\nБей отказ из-за нарушений правил эксплуатациию.");
+                            break;
+                    }
+
+            }
 
         }
     }
+}
+
+enum ComandConsole
+{
+    RepairCar = 1,
+    ExitProgram = 2
 }
