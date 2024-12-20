@@ -35,11 +35,19 @@
                     {
                         case (int)ComandConsole.RepairCar:
                             Console.WriteLine();
-                            Console.WriteLine("Напишите сломанную деталь:");
+                            Console.WriteLine("Напишите индекс сломанной детали:");
                             Console.WriteLine();
-                            string needDetails = Console.ReadLine();
+                            int needDetails = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine();
-                            serviceAuto.RepairCar(needDetails);
+                            if (warehouse.TryGetDetail(needDetails, out DetailData product))
+                            {
+                                serviceAuto.RepairCar(product.PriceDetail);
+                                warehouse.RemoveDetail(needDetails);
+                            }
+                            else
+                            {
+                                serviceAuto.ClientFine();
+                            }
                             break;
 
                         case (int)ComandConsole.ExitProgram:

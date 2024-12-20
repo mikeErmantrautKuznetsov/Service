@@ -3,15 +3,11 @@
     public class ServiceAuto
     {
         MoneyService moneyService = new MoneyService();
-        Warehouse warehouse = new Warehouse();
 
-        public void RepairCar(string needDetails)
+        public void RepairCar(int needDetails)
         {
-            if (needDetails != null)
-            {
-                warehouse.RemoveDetail(needDetails);
-                Console.WriteLine("Ремонт выполнен успешно.");
-            }
+            Console.WriteLine($"Цена за ремонт: {moneyService.ServiceRepair}руб.\n" +
+                $"Цена детали: {needDetails}руб. Итог {moneyService.BalanceService = moneyService.ServiceRepair + needDetails + moneyService.BalanceService}руб.");
         }
 
         public void ClientFine()

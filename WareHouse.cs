@@ -2,35 +2,41 @@
 {
     public class Warehouse
     {
-        MoneyService moneyService = new MoneyService();
 
-        Dictionary<string, int> _details = new Dictionary<string, int>()
+        Dictionary<int, DetailData> _details = new Dictionary<int, DetailData>()
         {
-            {"двигатель", 5000},
-            {"тормаз", 1000},
-            {"генератор", 2000},
-            {"аккамулятор", 500},
-            {"бензобак", 1500}
+            {1, new DetailData("двигатель", 5000)},
+            {2, new DetailData("тормаз", 1000)},
+            {3, new DetailData("генератор", 2000)},
+            {4, new DetailData("аккамулятор", 500)},
+            {5, new DetailData("бензобак", 1500)}
         };
 
         public void DisplayDetails()
         {
-            foreach (KeyValuePair<string, int> detailsValues in _details)
+            foreach (KeyValuePair<int, DetailData> detailsValues in _details)
             {
-                Console.WriteLine(detailsValues);
+                Console.WriteLine($"Индекс: {detailsValues.Key}. \n" +
+                    $"Название: {detailsValues.Value.NameDetail}. \n" +
+                    $"Цена: {detailsValues.Value.PriceDetail}.");
             }
         }
 
-        public void RemoveDetail(string needDetails)
+        public bool TryGetDetail(int key, out DetailData product)
         {
-            foreach (KeyValuePair<string, int> detail in _details)
-                if (needDetails == detail.Key)
-                {
-                    Console.WriteLine($"Цена за ремонт: {moneyService.ServiceRepair}руб.\n" +
-                        $"Цена детали: {detail.Value}руб. Итог {moneyService.BalanceService = moneyService.ServiceRepair + detail.Value + moneyService.BalanceService}руб.");
-                    _details.Remove(detail.Key);
-                    break;
-                }
+            product = null;
+
+            if (_details.ContainsKey(key))
+            {
+                product = _details[key];
+                return true;
+            }
+            return false;
+        }
+
+        public void RemoveDetail(int key)
+        {
+            _details.Remove(key);
         }
     }
 }
