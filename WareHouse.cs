@@ -22,13 +22,13 @@
             }
         }
 
-        public bool TryGetDetail(int key, out DetailData product)
+        public bool TryGetDetail(int key, out DetailData detail)
         {
-            product = null;
+            detail = null;
 
             if (_details.ContainsKey(key))
             {
-                product = _details[key];
+                detail = _details[key];
                 return true;
             }
             return false;
