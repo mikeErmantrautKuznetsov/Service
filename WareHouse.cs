@@ -17,21 +17,14 @@
             foreach (KeyValuePair<int, DetailData> detailsValues in _details)
             {
                 Console.WriteLine($"Индекс: {detailsValues.Key}. \n" +
-                    $"Название: {detailsValues.Value.NameDetail}. \n" +
-                    $"Цена: {detailsValues.Value.PriceDetail}.");
+                    $"Название: {detailsValues.Value.name}. \n" +
+                    $"Цена: {detailsValues.Value.price}.");
             }
         }
 
         public bool TryGetDetail(int key, out DetailData detail)
         {
-            detail = null;
-
-            if (_details.ContainsKey(key))
-            {
-                detail = _details[key];
-                return true;
-            }
-            return false;
+            return _details.TryGetValue(key, out detail);
         }
 
         public void RemoveDetail(int key)

@@ -12,13 +12,13 @@
     {
         static void Main(string[] args)
         {
-            ServiceAuto serviceAuto = new ServiceAuto();
+            AutoService serviceAuto = new AutoService();
             Warehouse warehouse = new Warehouse();
             MoneyService moneyService = new MoneyService();
 
             Console.WriteLine("Склад.");
             Console.WriteLine();
-            Console.WriteLine(moneyService.balanceService);
+            Console.WriteLine(moneyService.balance);
             Console.WriteLine();
             warehouse.DisplayDetails();
             Console.WriteLine();
@@ -36,22 +36,11 @@
                         case (int)ComandConsole.RepairCar:
                             Console.WriteLine();
                             Console.WriteLine("Напишите индекс сломанной детали:");
-                            Console.WriteLine();
-                            int needDetails = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine();
-                            if (warehouse.TryGetDetail(needDetails, out DetailData product))
-                            {
-                                serviceAuto.RepairCar(product.PriceDetail);
-                                warehouse.RemoveDetail(needDetails);
-                            }
-                            else
-                            {
-                                serviceAuto.ClientFine();
-                            }
+                            int needDetail = Convert.ToInt32(Console.ReadLine());
+                            serviceAuto.CarRepair(needDetail);
                             break;
 
                         case (int)ComandConsole.ExitProgram:
-                            serviceAuto.Exit();
                             Console.Clear();
                             _exitGame = true;
                             break;

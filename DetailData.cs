@@ -2,16 +2,13 @@
 {
     public class DetailData
     {
-        private string _nameDetail;
-        private int _priceDetail;
+        public string name { get; set; }
+        public int price { get; set; }
 
-        public DetailData(string _nameDetail, int _priceDetail)
+        public DetailData(string _name, int _price)
         {
-            NameDetail = _nameDetail;
-            PriceDetail = _priceDetail;
+            name = _name;
+            price = _price;
         }
-
-        public string NameDetail { get { return _nameDetail; } set { _nameDetail = value; } }
-        public int PriceDetail { get { return _priceDetail; } set { _priceDetail = value; } }
     }
 }
