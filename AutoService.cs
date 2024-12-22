@@ -6,14 +6,14 @@
 
         public void RepairCar(int needDetails)
         {
-            Console.WriteLine($"Цена за ремонт: {moneyService.ServiceRepair}руб.\n" +
-                $"Цена детали: {needDetails}руб. Итог {moneyService.BalanceService = moneyService.ServiceRepair + needDetails + moneyService.BalanceService}руб.");
+            Console.WriteLine($"Цена за ремонт: {moneyService.serviceRepair}руб.\n" +
+                $"Цена детали: {needDetails}руб. Итог {moneyService.balanceService = moneyService.serviceRepair + needDetails + moneyService.balanceService}руб.");
         }
 
         public void ClientFine()
         {
             Console.WriteLine("Такой детали нет. В ремонте отказано.");
-            Console.WriteLine($"Баланс: {moneyService.BalanceService = moneyService.BalanceService - moneyService.FineService}");
+            Console.WriteLine($"Баланс: {moneyService.balanceService = moneyService.balanceService - moneyService.fineService}");
             Console.WriteLine("В ремонте отказано.");
         }
 

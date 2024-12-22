@@ -18,7 +18,7 @@
 
             Console.WriteLine("Склад.");
             Console.WriteLine();
-            Console.WriteLine(moneyService.BalanceService);
+            Console.WriteLine(moneyService.balanceService);
             Console.WriteLine();
             warehouse.DisplayDetails();
             Console.WriteLine();
