@@ -33,7 +33,7 @@
 
                     switch (resultChoice)
                     {
-                        case (int)ComandConsole.RepairCar:
+                        case (int)ComandConsole.CarRepair:
                             Console.WriteLine();
                             Console.WriteLine("Напишите индекс сломанной детали:");
                             int needDetail = Convert.ToInt32(Console.ReadLine());
@@ -59,6 +59,6 @@
 
 enum ComandConsole
 {
-    RepairCar = 1,
+    CarRepair = 1,
     ExitProgram = 2
 }
